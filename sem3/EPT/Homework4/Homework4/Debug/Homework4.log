@@ -1,0 +1,16 @@
+﻿  CFileErrCode.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileErrCode.cpp(2,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileErrCode.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileErrCode.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+  CFileLastError.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileLastError.cpp(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileLastError.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileLastError.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+  CFileThrowEx.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileThrowEx.cpp(1,1): warning C4005: '_CRT_SECURE_NO_WARNINGS': macro redefinition
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileThrowEx.cpp : message : see previous definition of '_CRT_SECURE_NO_WARNINGS'
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileThrowEx.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+  Homework4.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\Homework4.cpp(53,13): warning C4101: 'e': unreferenced local variable
+  Generating Code...
+  Homework4.vcxproj -> C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Debug\Homework4.exe

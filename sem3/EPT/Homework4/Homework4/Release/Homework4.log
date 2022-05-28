@@ -1,0 +1,8 @@
+﻿  CFileErrCode.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileErrCode.cpp(24,12): error C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileErrCode.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+  CFileLastError.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileLastError.cpp(66,20): warning C4018: '<': signed/unsigned mismatch
+  CFileThrowEx.cpp
+C:\Users\kuba\OneDrive - Politechnika Wroclawska\pwr\SEM3\Effective Programming Techniques\Homework4\Homework4\CFileThrowEx.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
+  Homework4.cpp

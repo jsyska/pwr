@@ -1,0 +1,6 @@
+	Prod#1	Prod#2	Prod#3	Prod#4	Prod#5	Total Amt
+Person#:13	14	25	36	24	112
+Person#:35	24	13	225	35	332
+Person#:24	35	24	13	53	149
+Person#:24	13	35	24	133	229
+total 	96	86	97	298	245	

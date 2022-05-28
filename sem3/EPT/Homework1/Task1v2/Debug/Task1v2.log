@@ -1,0 +1,6 @@
+﻿  Task1v2.cpp
+C:\Users\jaksy\Code\Pwr\EPT\Task1v2\Task1v2\Task1v2.cpp(16,47): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\jaksy\Code\Pwr\EPT\Task1v2\Task1v2\Task1v2.cpp(16,47): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\jaksy\Code\Pwr\EPT\Task1v2\Task1v2\Task1v2.cpp(26,24): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\jaksy\Code\Pwr\EPT\Task1v2\Task1v2\Task1v2.cpp(26,24): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Task1v2.vcxproj -> C:\Users\jaksy\Code\Pwr\EPT\Task1v2\Debug\Task1v2.exe

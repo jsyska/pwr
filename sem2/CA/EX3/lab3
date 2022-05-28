@@ -1,0 +1,63 @@
+.data
+	endOfProgram: .asciiz "ten alphanumeric strings have been generated succesfully"
+.text 
+#set upper bound to 123 (because of the fact that then we add 48) - acii z
+addi $a1, $zero, 75 
+
+li $t5, 10 #costant 10 which is upper bound of outer loop
+li $t6, 0 #counter for outer loop
+
+################## outer loop
+outerLoop:
+	beq $t6, $t5, endOuter #if t6 == 10 we end the outer loop
+	
+############### start of inner loop
+
+	li $t0, 10 #costant 10 which is upper bound of inner loop
+	li $t4, 0 #counter
+
+
+innerLoop:
+	beq $t4, $t0, endInner #if t4 == 10 we end the inner loop 
+	
+	#generate random number in range from 42 to 122
+	addi $v0, $zero, 42
+	syscall
+
+	#Set the lower bound to 48 (acii 0)
+	add $a0, $a0, 48
+
+	
+	slti	$t1, $a0, 57		#if ascii code is greater than 57
+					#and
+	slti	$t2, $a0, 65		#if ascii code is less than 65
+	slt	$t3, $t1, $t2
+	bne	$t3, $zero, innerLoop	#we have to generate another number which is ascii code of alphanumeric character 
+	
+	slti	$t1, $a0, 90		#if ascii code is greater than 90
+					#and
+	slti	$t2, $a0, 97		#if ascii code is less than 97
+	slt	$t3, $t1, $t2
+	bne	$t3, $zero, innerLoop	#we have to generate another number which is ascii code of alphanumeric character 
+	
+	
+
+	addi $t4, $t4, 1 #increment
+
+	#print alphanumeric character
+	addi $v0, $zero, 11
+	syscall
+	j innerLoop
+endInner:
+
+############### end of inner loop
+	addi $t6, $t6, 1 #increment 
+	
+	#print new line
+	addi $a0, $zero, 10
+	addi $v0, $zero, 11
+	syscall
+	j outerLoop
+	 
+endOuter:
+############### end of outer  loop

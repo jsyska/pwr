@@ -1,0 +1,97 @@
+.data
+	str: .space 512
+	message: .asciiz "Please provide the number of strings(1-10): "
+.text 
+main:
+	addi $sp, $sp, -1
+	li $t0, '\0'
+	sb $t0, 0($sp) 		# put on stack end of text sign
+	
+	la $a0, message
+	jal printMessageAndWaitForInput
+	move $t1, $v0 		# set number of strings
+
+outerLoop:
+	beqz $t1, output
+	
+	addi $sp, $sp, -1
+	li $t0, '\n'
+	sb $t0, 0($sp) 		# push new line to stack
+	
+	la $s0, str
+innerLoop:
+	li $v0, 12
+	syscall                # read character
+	beq $v0, '\n', done    # stop reading when you encounter '\n'
+	sb $v0, ($s0)          # save charcter
+	bne $v0, ' ', nextChar # if $v0 is diffrent than ' ' program reads next char
+	la $s1, str	       # else push word to stack
+case1:
+	lb $t0, ($s0)
+	addi $sp, $sp, -1
+	sb $t0, 0($sp) 		# push char to stack
+	
+	li $t0, '\0' 		# clean buffer
+	sb $t0, ($s0)
+	
+	beq $s1, $s0, innerLoop
+	subi $s0, $s0, 1 	# decrease buffer adress by 1
+	j case1
+nextChar:
+	addi $s0, $s0, 1 	# increase buffer adress by 1
+	j innerLoop
+done:
+	li $t0, ' '
+	sb $t0, ($s0) 		# save as last char ' '
+	la $s1, str
+case2:
+	lb $t0, ($s0)
+	addi $sp, $sp, -1
+	sb $t0, 0($sp) 		# push char to stack
+
+	li $t0, '\0'
+	sb $t0, ($s0) 		# clean buffer
+
+	beq $s1, $s0, endCase
+	subi $s0, $s0, 1 	# decrease buffer adress by 1
+	j case2
+endCase:
+	subi $t1, $t1, 1 	# decrease nuber of strings to read
+	j outerLoop
+output:
+	lb $a0, 0($sp)
+	addi $sp, $sp, 1
+	beq $a0, '\0', exit
+	li $v0, 11 		# take top char from stack and print, untill '\0'  
+	syscall
+	j output
+exit:
+	li $v0, 10
+	syscall
+
+printMessage: 			#Prints string message to the console  
+	li $v0, 4
+	syscall
+	
+	#Prints new line character to the console 
+	addi $sp, $sp, -4 	#Saves contents of an register  $v0 on the stack
+	sw $v0, 0($sp)
+	addi $sp, $sp, -4 	#Saves contents of an register  $a0 on the stack
+	sw $a0, 0($sp)
+	li $v0, 11
+	li $a0, '\n'
+	syscall
+	lw $a0, 0($sp) 		#Retrieves top of stack to an register $a0
+	addi $sp, $sp, 4
+	lw $v0, 0($sp) 		#Retrieves top of stack to an register $v0
+	addi $sp, $sp, 4
+	
+	jr $ra
+	
+printMessageAndWaitForInput:
+	li $v0, 4
+	syscall
+	li $v0, 5
+	syscall
+	jr $ra
+	
